@@ -106,7 +106,7 @@ const data = [
 
 // console.log(data.length);
 
-// policz średnią wieku
+// policz średnią wieku -----------------------------------------------------------------------------------------------
 
 // function calcAvgAge(people) {
 //     let totalAge = 0;
@@ -137,7 +137,8 @@ const data = [
 //         .reduce((acc, ce) => acc + ce.age, 0) / people.length;
 
 
-// policzyć średnią wieku dla osób spoza Warszawy
+// policzyć średnią wieku dla osób spoza Warszawy -------------------------------------------------------------------
+
 // function calcAvgAgeOutsideWarsaw(people) {
 //     let totalAge = 0;
 //     let counter = 0;
@@ -164,9 +165,78 @@ const data = [
 // // console.log(result1);
 // console.log(calcAvgAgeOutsideWarsaw2(data));
 
-function isFromKrakow(people) {
-    // return people.filter(function(person) {return person.city === 'krakow'})
-    return people.some((person) => person.city.toLowerCase() === 'krakow');
-}
+// sprawdzić, czy jest ktokolwiek z Krakowa -------------------------------------------------------------------------
+// function isFromKrakow(people) {
+//     // return people.filter(function(person) {return person.city === 'krakow'})
+//     return people.some((person) => person.city.toLowerCase() === 'krakow');
+// }
+//
+// console.log(isFromKrakow(data))
 
-console.log(isFromKrakow(data))
+// Czy wszyscy kochają JavaScript -------------------------------------------------------------------------
+// function doEverybodyLovesJS2(people) {
+//     for (let person of people) {
+//         if (person.hobbies.includes('js')) {
+//             return false;
+//         }
+//     }
+//
+//     return true;
+// }
+// function doEverybodyLovesJS1(people) {
+//     return people
+//         .every((person) => person.hobbies.includes('js'));
+// }
+//
+// const doEverybodyLovesJS3 = (people) => people.every((person) => !person.hobbies.includes('js'));
+//
+//
+// console.log(doEverybodyLovesJS1(data));
+// console.log(doEverybodyLovesJS2(data));
+// console.log(doEverybodyLovesJS3(data));
+
+// ile jest hobbies bez powtórzeń (unique) -------------------------------------------------------------------------
+// function countHobbiesUnique(people) {
+//     let hobbies = [];
+//     let counter = 0;
+//     for (let person of people) {
+//         for (let i of person.hobbies)
+//         if (!i in hobbies) {
+//             hobbies.push(i);
+//         }
+//     }
+//     return hobbies;
+// }
+//
+// console.log(countHobbiesUnique(data));
+
+// const countHobbiesUnique1 = function (elements) {
+//     const hobbies = [];
+//     for (const element of elements) {
+//         for (const hobby of element.hobbies) {
+//             if (!hobbies.includes(hobby)){
+//                 hobbies.push(hobby);
+//             }
+//         }
+//     }
+//     return hobbies.length;
+// }
+
+// console.log(countHobbiesUnique1(data));
+
+// const countHobbiesUnique2 = function (elements) {
+//     const hobbies = new Set();
+//        for (const element of elements) {
+//            for (const hobby of element.hobbies) {
+//                    hobbies.add(hobby);
+//                }
+//        }
+//     return hobbies.size;
+// }
+
+// const countHobbiesUnique3 = (elements) => new Set(elements.flatMap((element) => element.hobbies)).size;
+// const arr = [...(new Set(data.flatMap((element) => element.hobbies)))];
+// console.log(countHobbiesUnique3(data));
+// console.log(arr);
+
+
